@@ -7,17 +7,6 @@
 https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/focal/gitlab-ce_15.5.4-ce.0_arm64.deb
 
 ![web tải gitlab server](gitlab_ce_15.5.4_ubuntu_focal.jpg)
-
-chạy lệnh 
-# Cách cài đặt gitlab server trên ubuntu 20.04
-
-## 1. Chọn phiên bản gitlab server phù hợp
-
-- Truy cập đường link https://packages.gitlab.com/gitlab/gitlab-ce (tùy theo mục đích cài có thể chọn bản ee (Enterprise Edition) hoặc ce (Community Edition))
-- Hướng dẫn này đang cài ubuntu 20.04 nên sẽ chọn bản ubuntu/focal 15.5.4
-https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/focal/gitlab-ce_15.5.4-ce.0_arm64.deb
-
-![web tải gitlab server](gitlab_ce_15.5.4_ubuntu_focal.jpg)
 ## 2. Tải các gói cài đặt về máy
 > **`curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash`**
 - Nếu báo chưa cài curl thì dùng lệnh 
