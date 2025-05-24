@@ -3,6 +3,7 @@
 ## 1.SVN Server yêu cầu máy chủ web Apache, có thể cài đặt bằng cách chạy lệnh:
 
 > sudo apt update
+
 > sudo apt -y install apache2 apache2-utils
 
 ## 2. Sau đó cài đặt Apache SVN:
@@ -12,6 +13,7 @@
 ## 3. Kích hoạt các mô-đun Apache theo yêu cầu của SVN:
 
 > sudo a2enmod dav dav_svn
+
 > sudo systemctl restart apache2
 
 Chỉnh sửa tệp cấu hình SVN Apache và thực hiện các thay đổi tương tự như bên dưới:
@@ -20,6 +22,7 @@ Chỉnh sửa tệp cấu hình SVN Apache và thực hiện các thay đổi t�
 
 - Thêm nội dung sau vào cuối file:
 
+```html
 <Location /svn>
    DAV svn
    SVNParentPath /home/svn
@@ -28,10 +31,12 @@ Chỉnh sửa tệp cấu hình SVN Apache và thực hiện các thay đổi t�
    AuthUserFile /etc/apache2/dav_svn.passwd
    Require valid-user
 </Location>
+``` 
 
 ## 4. Kiểm tra cú pháp cấu hình
 
 > sudo apachectl -t
+
 Syntax OK
 
 - Sau đó khởi động lại dịch vụ apache2:
@@ -49,18 +54,20 @@ Chúng tôi đã chỉ định trong tệp cấu hình SVN Apache rằng thông 
 - Cung cấp mật khẩu người dùng quản trị viên của bạn:
 
 New password: <ENTER PASSWORD>
+
 Re-type new password:<CONFIRM PASSWORD>
+
 Adding password for user admin
 
 ## 2. Tùy chọn đã sử dụng:
 
 -c : Create a new file.
+
 -m Force MD5 encryption of the password (default).
+
 Khi thêm người dùng khác, không sử dụng tùy chọn -c  mà chỉ cần chuyển -m để sửa đổi tệp.
 
-> sudo htpasswd -m /etc/apache2/dav_svn.passwd user1
-> sudo htpasswd -m /etc/apache2/dav_svn.passwd user2
-> sudo htpasswd -m /etc/apache2/dav_svn.passwd user1
+> sudo htpasswd -m /etc/apache2/dav_svn.passwd <user-name>
 
 ![create new user](create_new_user.jpg)
 
@@ -75,11 +82,13 @@ Kiểm tra list user đang tồn tại
 ## 1. Tạo kho lưu trữ bằng lệnh svnadmin công cụ quản trị kho lưu trữ Subversion.
 
 > sudo mkdir -p /home/svn/<repo-name>
+
 > sudo svnadmin create /home/svn/<repo-name>
 
 - Đặt chủ sở hữu của thư mục /home/svn thành người dùng và nhóm www-data.
 
 > sudo  chown -R www-data:www-data  /home/svn
+
 > sudo chmod -R 775 /home/svn
 
 ![new repo](new_repo.jpg)
