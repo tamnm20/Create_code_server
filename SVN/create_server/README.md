@@ -47,15 +47,15 @@ Syntax OK
 
 Chúng tôi đã chỉ định trong tệp cấu hình SVN Apache rằng thông tin xác thực người dùng sẽ được lưu trên /etc/apache2/dav_svn.passwd.
 
- ## 1. Tạo người dùng Subversion quản trị viên của chúng tôi.
+ ## 1. Tạo user Subversion admin
  
  > sudo htpasswd -cm /etc/apache2/dav_svn.passwd admin
  
 - Cung cấp mật khẩu người dùng quản trị viên của bạn:
 
-New password: <ENTER PASSWORD>
+New password: ENTER PASSWORD
 
-Re-type new password:<CONFIRM PASSWORD>
+Re-type new password: CONFIRM PASSWORD
 
 Adding password for user admin
 
@@ -67,7 +67,7 @@ Adding password for user admin
 
 Khi thêm người dùng khác, không sử dụng tùy chọn -c  mà chỉ cần chuyển -m để sửa đổi tệp.
 
-> sudo htpasswd -m /etc/apache2/dav_svn.passwd <user-name>
+> sudo htpasswd -m /etc/apache2/dav_svn.passwd user-name
 
 ![create new user](create_new_user.jpg)
 
@@ -81,9 +81,9 @@ Kiểm tra list user đang tồn tại
 
 ## 1. Tạo kho lưu trữ bằng lệnh svnadmin công cụ quản trị kho lưu trữ Subversion.
 
-> sudo mkdir -p /home/svn/<repo-name>
+> sudo mkdir -p /home/svn/repo-name
 
-> sudo svnadmin create /home/svn/<repo-name>
+> sudo svnadmin create /home/svn/repo-name
 
 - Đặt chủ sở hữu của thư mục /home/svn thành người dùng và nhóm www-data.
 

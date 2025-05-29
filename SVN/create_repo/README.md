@@ -21,11 +21,11 @@ Tạo repo theo format dưới đây sử dụng file create_repo_svn.sh
 └── trunk
 ```
 
-> sudo ./create_repo_format.sh <repo-name>
+> sudo ./create_repo_format.sh repo-name
 
 ![repo format](repo_format.jpg)
 
-Nếu sử dụng file create_repo.sh sẽ chỉ tạo ra repo với duy nhất thư mục <repo-name>
+Nếu sử dụng file create_repo.sh sẽ chỉ tạo ra repo với duy nhất thư mục repo-name
 
 ## 2. Import file từ thư mục trên windows vào thư mục trunk trên server
 
@@ -33,7 +33,7 @@ Tìm thư mục chứa nội dung muốn import --> Click chuột phải --> Ch�
 
 ![Import_source](import.png)
 
-Điền đường dẫn tới repo vừa tạo thường là định là: http://swserver.mcnex/svn/<repo-name>/trunk
+Điền đường dẫn tới repo vừa tạo thường là định là: http://swserver.mcnex/svn/repo-name/trunk
 
 Điền nội dung Import message --> Nhấn OK
 
@@ -49,7 +49,7 @@ Mở thư mục sẽ chứa repo sau khi checkout --> Click chuột phải --> S
 
 ![svn checkout](svn_checkout.jpg)
 
-Điền đường dẫn tới repo mặc định là: http://swserver.mcnex/svn/<repo-name>/trunk
+Điền đường dẫn tới repo mặc định là: http://swserver.mcnex/svn/repo-name/trunk
 
 ![checkout url](repo_url.png)
 
